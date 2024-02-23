@@ -20,6 +20,9 @@ export default function Inicio() {
     refreshInterval: 1000
   })
 
+  console.log(data.data);
+  
+  
   if (isLoading) return 'Cargando..'
 
   const productos = data.data.filter(producto => producto.categoria_id === categoriaActual.id)
