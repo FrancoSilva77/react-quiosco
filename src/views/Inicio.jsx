@@ -18,14 +18,11 @@ export default function Inicio() {
   )
   const { data, error, isLoading } = useSWR('/api/productos', fetcher, {
     refreshInterval: 1000
-  })
-
-  console.log(data.data);
-  
+  })  
   
   if (isLoading) return 'Cargando..'
 
-  const productos = data.data.filter(producto => producto.categoria_id === categoriaActual.id)
+  const productos = data?.data.filter(producto => producto.categoria_id === categoriaActual.id)
 
   return (
     <>
